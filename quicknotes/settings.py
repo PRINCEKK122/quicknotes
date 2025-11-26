@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-@falb5v+sl%9i6+-r2dy*zsd&u(i25pm=2vcr4hapdh!y85r@@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["quicknotes-lp9k.onrender.com"]
+ALLOWED_HOSTS = ["quicknotes-lp9k.onrender.com", "127.0.0.1"]
 
 
 # Application definition
@@ -48,6 +48,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
 ROOT_URLCONF = "quicknotes.urls"
@@ -115,7 +116,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = "static/"
+STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "static"
 
 # Default primary key field type
