@@ -1,0 +1,26 @@
+{% extends "quicknotes/quicknotes.html" %}
+{% block title %}My Note{% endblock %}
+
+{% block body %}
+    <div class="form-wrap">
+        <!-- Edit form: keep only the fields inside the form -->
+        <form id="edit-note-form" action="{% url 'edit' note.id %}" method="POST" enctype="multipart/form-data" class="form-card edit-form">
+            {% csrf_token %}
+            {{ form }}
+        </form>
+
+        <!-- Actions: Save (submits edit form via form attribute) and Delete (separate form) -->
+        <div class="spaced" style="display:flex;gap:8px;align-items:center">
+            <button form="edit-note-form" class="btn btn-submit" type="submit">Save note</button>
+
+            <form action="{% url 'delete' note.id %}" method="POST" style="margin:0">
+                {% csrf_token %}
+                <button class="btn danger btn-delete" type="submit">Delete</button>
+            </form>
+        </div>
+
+        <div class="spaced">
+            <a href="{% url 'notes' %}" class="hint">All Notes</a>
+        </div>
+    </div>
+{% endblock %}
