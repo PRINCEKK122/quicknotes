@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "quicknotes",
     "quicknotes_site",
+    "rest_framework"
 ]
 
 MIDDLEWARE = [
