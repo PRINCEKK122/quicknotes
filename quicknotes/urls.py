@@ -22,6 +22,7 @@ from quicknotes import views
 
 router = routers.DefaultRouter()
 router.register("notes", views.NoteViewSet)
+router.register("collections", views.CollectionViewSet)
 
 from quicknotes import views
 
